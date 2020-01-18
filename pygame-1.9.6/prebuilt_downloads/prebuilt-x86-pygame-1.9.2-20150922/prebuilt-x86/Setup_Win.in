@@ -1,0 +1,38 @@
+# Pygame 1.9.2 Windows dependency macros.
+SDL = -Iprebuilt-x86/include -Iprebuilt-x86/include/SDL -Lprebuilt-x86/lib -lSDL
+FONT = -lSDL_ttf
+IMAGE = -lSDL_image
+MIXER = -lSDL_mixer
+PNG = -lpng
+JPEG = -ljpeg
+FREETYPE = -Iprebuilt-x86/include/freetype2 -lfreetype
+TIFF = -ltiff
+WEBP = -lwebp
+ZLIB = -lz
+VORBISFILE = -lvorbisfile
+VORBIS = -Iprebuilt-x86/include/vorbis -lvorbis
+OGG = -Iprebuilt-x86/include/ogg -logg
+WEBP = -lwebp
+MPG123 = -lmpg123
+PORTMIDI = -lportmidi
+PORTTIME =
+# Ensure make_prebuilt.py includes the freetype2 headers.
+COPYHDRS_FREETYPE = -lfreetype -Iprebuilt-x86/include/freetype2/freetype -Iprebuilt-x86/include/freetype2/freetype/config
+# The DLL's
+COPYLIB_SDL -lgcc -Lprebuilt-x86/lib/SDL.dll
+COPYLIB_SDL_ttf -lSDL -lfreetype -Lprebuilt-x86/lib/SDL_ttf.dll
+COPYLIB_SDL_image -lSDL -ljpef -lpng -ltiff -Lprebuilt-x86/lib/SDL_image.dll
+COPYLIB_SDL_mixer -lSDL -lvorbisfile -lsmpeg -Lprebuilt-x86/lib/SDL_mixer.dll
+COPYLIB_freetype -lz -Lprebuilt-x86/lib/libfreetype-6.dll
+COPYLIB_tiff -ljpeg -lz -Lprebuilt-x86/lib/libtiff-5.dll
+COPYLIB_png -lz -Lprebuilt-x86/lib/libpng16-16.dll
+COPYLIB_jpeg -Lprebuilt-x86/lib/libjpeg-8.dll
+COPYLIB_webp -Lprebuilt-x86/lib/libwebp-5.dll
+COPYLIB_mpg123 -Lprebuilt-x86/lib/libmpg123-0.dll
+COPYLIB_z -Lprebuilt-x86/lib/zlib1.dll
+COPYLIB_vorbisfile -lvorbis -Lprebuilt-x86/lib/libvorbisfile-3.dll
+COPYLIB_vorbis -logg -Lprebuilt-x86/lib/libvorbis-0.dll
+COPYLIB_ogg -Lprebuilt-x86/lib/libogg-0.dll
+COPYLIB_portmidi -Lprebuilt-x86/lib/portmidi.dll
+COPYLIB_gcc -Lprebuilt-x86/lib/libgcc_s_sjlj-1.dll
+COPYLIB_stdcxx -Lprebuilt-x86/lib/libstdc++-6.dll
